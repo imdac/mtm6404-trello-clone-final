@@ -1,2 +1,6 @@
-# mtm6404-trello-clone
-This repository contains the starter files for the Trello Clone project. 
+# Trello Clone
+
+## Objective
+Use the Vue Framework to create a [Trello](https://trello.com/) Clone web application that will store its data to Local Storage. 
+
+
