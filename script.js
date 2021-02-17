@@ -17,6 +17,40 @@ const app = Vue.createApp({
         }
       ]
     }
+  },
+  created: function () {
+    const cards = localStorage.getItem('cards')
+
+    if (cards) {
+      this.cards = JSON.parse(cards)
+    }
+  },
+  computed: {
+    toDo: function () {
+      return this.cards.filter(card => card.list === 'To Do')
+    },
+    doing: function () {
+      return this.cards.filter(card => card.list === 'Doing')
+    },
+    done: function () {
+      return this.cards.filter(card => card.list === 'Done')
+    }
+  },
+  methods: {
+    addCard: function (list) {
+      this.cards.push({
+        list: list,
+        text: 'New card...'
+      })
+    }
+  },
+  watch: {
+    cards: {
+      deep: true,
+      handler: function (cards) {
+        localStorage.setItem('cards', JSON.stringify(cards))
+      }
+    }
   }
 })
 

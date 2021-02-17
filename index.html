@@ -15,45 +15,45 @@
       <div class="list">
         <div class="list-header">
           <h2 class="list-title">To Do</h2>
-          <button class="list-button">+</button>
+          <button class="list-button" @click="addCard('To Do')">+</button>
         </div>
-        <div class="card">
-          <select class="card-action">
+        <div class="card" v-for="card in toDo">
+          <select class="card-action" v-model="card.list">
             <optgroup label="Move to:">
               <option v-for="list in lists">{{ list }}</option>
             </optgroup>
           </select>
-          <input type="text" class="card-text">
+          <input type="text" class="card-text" v-model="card.text">
         </div>
       </div>
 
       <div class="list">
         <div class="list-header">
           <h2 class="list-title">Doing</h2>
-          <button class="list-button">+</button>
+          <button class="list-button" @click="addCard('Doing')">+</button>
         </div>
-        <div class="card">
-          <select class="card-action">
+        <div class="card" v-for="card in doing">
+          <select class="card-action" v-model="card.list">
             <optgroup label="Move to:">
               <option v-for="list in lists">{{ list }}</option>
             </optgroup>
           </select>
-          <input type="text" class="card-text">
+          <input type="text" class="card-text" v-model="card.text">
         </div>
       </div>
 
       <div class="list">
         <div class="list-header">
           <h2 class="list-title">Done</h2>
-          <button class="list-button">+</button>
+          <button class="list-button" @click="addCard('Done')">+</button>
         </div>
-        <div class="card">
-          <select class="card-action">
+        <div class="card" v-for="card in done">
+          <select class="card-action" v-model="card.list">
             <optgroup label="Move to:">
               <option v-for="list in lists">{{ list }}</option>
             </optgroup>
           </select>
-          <input type="text" class="card-text">
+          <input type="text" class="card-text" v-model="card.text">
         </div>
       </div>
     </div>
