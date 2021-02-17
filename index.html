@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Trello Clone</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="https://unpkg.com/vue@next"></script>
+</head>
+<body>
+  <main id="app" class="main">
+    <h1 class="title">Trello Clone</h1>
+    <div class="board">
+      <div class="list">
+        <div class="list-header">
+          <h2 class="list-title">To Do</h2>
+          <button class="list-button">+</button>
+        </div>
+        <div class="card">
+          <select class="card-action">
+            <optgroup label="Move to:">
+              <option v-for="list in lists">{{ list }}</option>
+            </optgroup>
+          </select>
+          <input type="text" class="card-text">
+        </div>
+      </div>
+
+      <div class="list">
+        <div class="list-header">
+          <h2 class="list-title">Doing</h2>
+          <button class="list-button">+</button>
+        </div>
+        <div class="card">
+          <select class="card-action">
+            <optgroup label="Move to:">
+              <option v-for="list in lists">{{ list }}</option>
+            </optgroup>
+          </select>
+          <input type="text" class="card-text">
+        </div>
+      </div>
+
+      <div class="list">
+        <div class="list-header">
+          <h2 class="list-title">Done</h2>
+          <button class="list-button">+</button>
+        </div>
+        <div class="card">
+          <select class="card-action">
+            <optgroup label="Move to:">
+              <option v-for="list in lists">{{ list }}</option>
+            </optgroup>
+          </select>
+          <input type="text" class="card-text">
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
